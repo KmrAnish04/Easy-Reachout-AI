@@ -1,2 +1,40 @@
 # Kiro IDE / CLI workspace files
 .kiro/
+
+# Dependencies
+node_modules/
+.pnp
+.pnp.js
+
+# Environment
+.env
+.env.local
+.env.*.local
+apps/api/.env
+apps/web/.env.local
+
+# Build outputs
+dist/
+.next/
+out/
+build/
+
+# Testing
+coverage/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+.DS_Store
+
+# Logs
+logs/
+*.log
+npm-debug.log*
+pnpm-debug.log*
+
+# Prisma
+apps/api/prisma/migrations/.env
+
