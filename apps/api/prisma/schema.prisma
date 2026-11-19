@@ -1,0 +1,29 @@
+// Database configuration
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+// User model - authentication foundation
+model User {
+  id           String   @id @default(cuid())
+  email        String   @unique
+  passwordHash String   @map("password_hash")
+  createdAt    DateTime @default(now()) @map("created_at")
+  updatedAt    DateTime @updatedAt @map("updated_at")
+
+  @@map("users")
+}
+
+// Future models (schema-ready, not implemented):
+// - AiSettings (BYOK configuration)
+// - Resume (user's resume versions)
+// - Job (job postings)
+// - JobSource (raw input text/URLs)
+// - ApplyMethod (how to apply)
+// - Contact (people contacted for referrals)
+// - OutreachEvent (tracking messages sent)
